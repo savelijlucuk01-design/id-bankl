@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>BankID</title>
+    <style>
+        body {
+            background-color: #002658; /* Тот самый темно-синий цвет */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Верхняя панель */
+        .header {
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .menu-icon {
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* Основная область с карточкой */
+        .main-content {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 340px;
+            border-radius: 12px;
+            padding: 20px;
+            box-sizing: border-box;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin-right: 15px;
+            object-fit: cover;
+            border: 1px solid #eee;
+        }
+
+        .info h1 {
+            margin: 0;
+            font-size: 22px;
+            color: #000;
+            font-weight: 600;
+        }
+
+        .info p {
+            margin: 5px 0 0;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .qr-section {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .qr-code {
+            width: 150px;
+            height: 150px;
+        }
+
+        .status-text {
+            margin-top: 10px;
+            color: #333;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* Нижние кнопки */
+        .bottom-actions {
+            padding: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #002658;
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Верхняя часть -->
+    <div class="header">
+        <div class="logo">BANKID</div>
+        <div class="menu-icon">⋮</div>
+    </div>
+
+    <!-- Карточка пользователя -->
+    <div class="main-content">
+        <div class="card">
+            <div class="card-header">
+                <!-- Замени src на ссылку на твое фото -->
+                <img src="https://via.placeholder.com/150" alt="Profile" class="avatar">
+                <div class="info">
+                    <h1>ИМЯ ФАМИЛИЯ</h1>
+                    <p>Fødselsnummer: 010190 12345</p>
+                </div>
+            </div>
+            
+            <div class="qr-section">
+                <!-- Генератор QR кода -->
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=BankIDUser123" alt="QR" class="qr-code">
+                <div class="status-text">Klar til signering</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Кнопки действий -->
+    <div class="bottom-actions">
+        <button class="btn btn-secondary">Velg aktivitet</button>
+        <button class="btn btn-primary">Signer dokument</button>
+    </div>
+
+</body>
+</html>
